@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Rest API</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.min.js" charset="utf-8"></script>
+    <script src="https://momentjs.com/downloads/moment-with-locales.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="title">
+    <h1>Lista Todos</h1>
+    </div>
+    <div class="insert">
+      <input class="insert_input" id="insert" type="text" placeholder="Inserisci un elemento">
+      <input class="insert_time" id="time" type="time" name="time" value="">
+      <input class="insert_date" id="date" type="date" name="date" value="">
+      <button class="insert_button" type="button" name="button" id="my-button">Invia</button>
+    </div>
+    <div class="alert"></div>
+    <div class="wrapper-list">
+    </div>
+    <script id="template-list" type="text/x-handlebars-template">
+      <ol class="list">
+        {{#each item}}
+        <li data-id="{{id}}" class="list__item">
+          <input class="list__text" type="text" value="{{text}}">
+          <input class="list__time" type="time" name="time" value="{{time}}">
+          <input class="list__date" type="date" name="date" value="{{date}}">
+          <span data-id="{{id}}" class="delete"><i class="fas fa-trash-alt"></i></span>
+        </li>
+        {{/each}}
+      </ol>
+    </script>
+    <script src="main.js" charset="utf-8"></script>
+  </body>
+</html>
